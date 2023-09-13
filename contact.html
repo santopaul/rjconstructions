@@ -11,6 +11,7 @@ Author URL: https://santopaul.github.io/Santo/
     <title>RJ Constructions | Contact</title>
     <link href="//fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Template CSS -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
   </head>
@@ -422,5 +423,24 @@ Author URL: https://santopaul.github.io/Santo/
 </script>
 <!--//MENU-JS-->
 <script src="assets/js/bootstrap.min.js"></script><!-- //bootstrap js -->
+    <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbwtHYJ0Ud8qYI5vhMeWE0VV382-M7jH5gKJYG37xvMD0qafikXV5o3yFWZkQS0X20V7/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
 </body>
 </html>
